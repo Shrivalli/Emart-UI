@@ -1,0 +1,66 @@
+
+<style>
+    
+    .div1{
+      overflow: hidden;
+      background-color:cadetblue;
+    }
+    
+    .div1 a {
+      float: left;
+      display: block;
+      color:white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+    
+    .div1 a:hover {
+      background-color:white;
+      color: black;
+    }
+    #div3 {
+
+      height:700px;
+    }
+    body  {
+  background-image: url("assets/images/seller1.jpg");
+  background-repeat: no-repeat;
+  background-size:100% 100%;
+  height:2500px;
+  
+ 
+}
+    .div1  a.active {
+      background-color: #2196F3;
+      color: white;
+    }
+   
+    </style>
+    
+    <body>
+    <main>
+        <section>
+      
+            <div class="div1" style="background-color:lightslategray;">
+                <a  [routerLink]="'viewitems'" routerLinkActive="router-link-active" >ViewItems</a>
+                <a  [routerLink]="'additems'" routerLinkActive="router-link-active" >AddItems</a>
+                <a [routerLink]="'view-profile'" routerLinkActive="router-link-active">ViewProfile</a>
+                <a  [routerLink]="'viewreports'" routerLinkActive="router-link-active">ViewReports</a>
+                
+                <a (click)="logout()">LogOut</a>
+        </div>
+    
+             <div id="div3">
+                <router-outlet></router-outlet>
+             </div>
+          
+             
+        </section>
+        
+    </main>   
+    
+    </body>
+    
+    

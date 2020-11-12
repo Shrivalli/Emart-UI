@@ -1,0 +1,94 @@
+<form fxLayoutAlign="center ">
+    <div class="container card col-md-4" style="background-color:rosybrown;  float:left;" >
+        <div class="card-body">
+            <form [formGroup]="sellerregistrationform" (ngSubmit)="onSubmit()">
+                <!-- <div class="form-group">
+                        <label>Enter  SellerId</label>
+                        <input type="text" formControlName="SellerId" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.SellerId.errors }">
+                           <div *ngIf="submitted && f.SellerId.errors" class="invalid-feedback">
+                            <div *ngIf="f.SellerId.errors.required">ID is required</div>
+                        </div>
+               </div> -->
+                <div class="form-group ">
+                        <label for="input-sm">Enter the SellerName</label>
+                        <input type="form control input-sm" formControlName="sname" class="form-control" 
+                        [ngClass]="{ 'is-invalid': submitted && f.sname.errors }" />
+                        <div *ngIf="submitted && f.sname.errors" class="invalid-feedback">
+                            <div *ngIf="f.sname.errors.required">Name is required</div>
+                            <div *ngIf="f.sname.errors.pattern">Enter only Alphabets in lower case</div>
+                        </div>
+                 </div>
+                <div class="form-group ">
+                        <label>Enter SCompany</label>
+                        <input type="text" formControlName="scompany" class="form-control" 
+                        [ngClass]="{ 'is-invalid': submitted && f.scompany.errors }" />
+                        <div *ngIf="submitted && f.scompany.errors" class="invalid-feedback">
+                            <div *ngIf="f.scompany.errors.required">SComapny is required</div>
+                        </div>
+                </div>
+                <div class="form-group ">
+                    <label>Enter Gstin</label>
+                    <input type="text" formControlName="gstin" class="form-control" 
+                    [ngClass]="{ 'is-invalid': submitted && f.gstin.errors }" />
+                    <div *ngIf="submitted && f.gstin.errors" class="invalid-feedback">
+                        <div *ngIf="f.gstin.errors.required">Gstin is required</div>
+                    </div>
+            </div>
+            <div class="form-group ">
+                <label>Enter Breif about Company</label>
+                <input type="text" formControlName="briefAboutCompany" class="form-control" 
+                [ngClass]="{ 'is-invalid': submitted && f.briefAboutCompany.errors }" />
+                <div *ngIf="submitted && f.briefAboutCompany.errors" class="invalid-feedback">
+                    <div *ngIf="f.briefAboutCompany.errors.required">About company is required</div>
+                </div>
+        </div>
+        <div class="form-group ">
+            <label>Enter Postal_Address</label>
+            <input type="text" formControlName="postalAddress" class="form-control" 
+            [ngClass]="{ 'is-invalid': submitted && f.postalAddress.errors }" />
+            <div *ngIf="submitted && f.postalAddress.errors" class="invalid-feedback">
+                <div *ngIf="f.postalAddress.errors.required">  Postal_Address is required</div>
+            </div>
+    </div>
+    
+              <div class="form-group">
+                    <label>Enter SellerMobile</label>
+                    <input type="text" value="+91" readonly size="2"/><input type="text" formControlName="sno" class="form-control" 
+                    [ngClass]="{ 'is-invalid': submitted && f.sno.errors }" />
+                    <!-- <input type="text" value="+91" readonly size="2"/>
+                    <input type="number" formControlName="SellerMobile" class="form-control"
+                     [ngClass]="{ 'is-invalid': submitted && f.SellerMobile.errors }" /> -->
+                    <div *ngIf="submitted && f.sno.errors" class="invalid-feedback">
+                        <div *ngIf="f.sno.errors.required">Mobile no is required</div>
+                        <div *ngIf="f.sno.errors.pattern">Mobile no Must be Valid</div>
+                    </div>
+                
+             </div>
+                <div class="form-group">
+                    <label>Enter SellerEmail</label>
+                    <input type="text" formControlName="semail" class="form-control"
+                     [ngClass]="{ 'is-invalid': submitted && f.semail.errors }" />
+                    <div *ngIf="submitted && f.semail.errors" class="invalid-feedback">
+                        <div *ngIf="f.semail.errors.required">Email is required</div>
+                        <div *ngIf="f.semail.errors.SellerEmail">Email must be a valid email address</div>
+                    </div>
+                </div>
+                   <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" formControlName="spwd" class="form-control" 
+                        [ngClass]="{ 'is-invalid': submitted && f.spwd.errors }" />
+                        <div *ngIf="submitted && f.spwd.errors" class="invalid-feedback">
+                            <div *ngIf="f.spwd.errors.required">Password is required</div>
+                            <div *ngIf="f.spwd.errors.minlength">Password must be at least 8 characters</div>
+                        </div>
+                    </div>
+                <div class="text-center">
+                    <button class="btn btn-primary mr-1">Submit</button>
+              </div>
+            </form>
+        </div>
+    </div>
+    </form>
+    
+    
+

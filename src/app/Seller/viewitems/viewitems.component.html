@@ -1,0 +1,111 @@
+<!-- <style>
+    th,td{
+     column-width: auto;
+    }
+</style> -->
+
+
+&nbsp;
+&nbsp;
+  <div class="container">
+      <table class="table table-bordered" style="background-color:lightslategray;">
+          <tr>
+              <th>Item Id</th>
+              <th>Category Id</th>
+              <th>SubCatergory Id</th>
+              <th>Price</th>
+              <th>ItemName</th>
+              <th>Description</th>
+              <th>Stockno</th>
+              <th>Remarks</th>
+              <th>Seller Id</th>
+              <th>Item Image</th>
+              <th>Edit</th>
+              <th>Delete</th>
+
+          </tr>
+          <tr *ngFor="let item of list">
+             <td>{{item.iid}}</td>
+             <td>{{item.cid}}</td>
+             <td>{{item.scid}}</td>
+             <td>{{item.price}}</td>
+             <td>{{item.itemName}}</td>
+             <td>{{item.description}}</td>
+             <td>{{item.stockNo}}</td>
+             <td>{{item.remarks}}</td>
+             <td>{{item.sid}}</td>
+             <td><img src="assets/images/{{item.imagepath}}" style="width: 200px; height:200px"><br><br>
+        
+             <td><button class="btn btn-info btn-lg" type="button" (click)="Search(item.iid)">Edit</button></td>
+             <td><button class="btn-danger btn-lg" type="button" (click)="Delete(item.iid)">Delete</button></td>
+          </tr>
+      </table>
+  </div>
+
+
+  <div class="container card col-md-3"  [hidden]="isShow" style="height: 300;background-color:lightslategray;">
+    <div class="card-body" >
+        <form [formGroup]="itemForm"   >
+           <h1>Edit Items</h1> 
+            <div class="form-group">
+                <label >Item ID</label>
+                <input type="text" formControlName="iid" class="form-control" readonly="readonly"/>
+              </div>
+
+              <div class="form-group">
+                <label>Category Id </label>
+                <input type="number" formControlName="cid" class="form-control" readonly="readonly" />
+            </div>
+
+              <div class="form-group">
+                <label>Subcategory Id </label>
+                <input type="number" formControlName="scid" class="form-control" readonly="readonly" />
+               
+            </div>
+
+            <div class="form-group">
+                <label>Seller Id </label>
+                <input type="number" formControlName="sid" class="form-control" readonly="readonly" />
+               
+            </div>
+
+            <div class="form-group">
+                <label>Item Name</label>
+                <input type="text" formControlName="itemName" class="form-control"  />
+               
+        </div>
+        
+        <div class="form-group">
+            <label>Item Price </label>
+            <input type="number" formControlName="price" class="form-control"  />
+           
+        </div>
+        <div class="form-group">
+            <label> Description</label>
+            <input type="text" formControlName="description" class="form-control"  />
+           
+        </div>
+        <div class="form-group">
+            <label>Remarks</label>
+            <input type="text" formControlName="remarks" class="form-control"  />
+           
+        </div>
+       
+        <div class="form-group">
+            <label>Uplaod image</label>
+            <input type="file"(change)="fileEvent($event)" formControlName="imagepath" class="form-control"/>
+        </div>
+
+    <div class="form-group">
+        <label>Stock Number</label>
+        <input type="number" formControlName="stockNo" class="form-control"  />
+    </div>
+            <div class="text-center">
+                <button class="btn btn-primary mr-1" (click)="Update()">Update Item</button>&nbsp;
+               
+                
+          </div>
+        </form>
+    </div>
+</div>
+

@@ -1,0 +1,34 @@
+&nbsp;
+&nbsp;
+<form fxLayoutAlign="center ">
+    <div class="container card col-md-4" style="background-color:lightgoldenrodyellow; float:left">
+        <div class="card-body">
+            <form [formGroup]="addcategoryform" (ngSubmit)="onSubmit()">
+                
+                <div class="form-group ">
+                        <label >Category Name</label>
+                        <input type="text" formControlName="cname" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.cname.errors }" />
+                        <div *ngIf="submitted && f.cname.errors" class="invalid-feedback">
+                            <div *ngIf="f.cname.errors.required">Name is required</div>
+                            
+                        </div>
+                 </div>
+                <div class="form-group ">
+                        <label >Brief Details</label>
+                        <input type="text" formControlName="cdetails" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.cdetails.errors }" />
+                        <div *ngIf="submitted && f.cdetails.errors" class="invalid-feedback">
+                            <div *ngIf="f.cdetails.errors.required">Brief Details is required</div>
+                        </div>
+                </div>
+                
+              
+                <div class="text-center">
+                    <button class="btn btn-primary mr-1">Add</button>
+                   
+              </div>
+            </form>
+        </div>
+    </div>
+    
+ 
+    

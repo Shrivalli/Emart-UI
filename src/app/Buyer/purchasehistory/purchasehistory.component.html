@@ -1,0 +1,24 @@
+
+<h1 align="center" style="font-style: italic;">Purchase History</h1>
+
+        
+        <table class="table table-bordered" style="background-color: rosybrown;">
+            <tr>
+                <th>Transaction Id</th>
+                <th>Seller Id</th>
+                <th>Buyer Id</th>
+                <th>Item Id</th>
+                <th>No of Items</th>
+                <th>Payment Mode</th>
+            </tr>
+            <tr *ngFor="let item of list">
+               <td>{{item.tid}}</td>
+               <td>{{item.sid}}</td>
+               <td>{{item.bid}}</td>
+               <td>{{item.iid}}</td>
+                <td>{{item.noOfItems}}</td>
+                <td>{{item.transactionType}}</td>
+               
+            </tr>
+        </table>
+    

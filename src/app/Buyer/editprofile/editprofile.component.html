@@ -1,0 +1,67 @@
+
+&nbsp;
+&nbsp;
+<form fxLayoutAlign="center start">
+    <div class="container card col-md-4" style="background-color:rosybrown;float:right">
+        <div class="card-body">
+            <form [formGroup]="buyerregisterform" (ngSubmit)="onSubmit()">
+                <div class="form-group ">
+                        <label>Enter BuyerId</label>
+                        <input type="text" formControlName="bid" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.bid.errors }">
+                           <div *ngIf="submitted && f.bid.errors" class="invalid-feedback">
+                            <div *ngIf="f.bid.errors.required">ID is required</div>
+                        </div>
+               </div>
+                <div class="form-group ">
+                        <label>Enter the BuyerName</label>
+                        <input type="text" formControlName="bname" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.bname.errors }" />
+                        <div *ngIf="submitted && f.bname.errors" class="invalid-feedback">
+                            <div *ngIf="f.bname.errors.required">Name is required</div>
+                            <div *ngIf="f.bname.errors.pattern">Enter only Alphabets in upper case</div>
+                        </div>
+                 </div>
+                <div class="form-group ">
+                        <label>Enter CreatedDate</label>
+                        <input type="date" formControlName="bdate" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.bdate.errors }" />
+                        <div *ngIf="submitted && f.bdate.errors" class="invalid-feedback">
+                            <div *ngIf="f.bdate.errors.required">Join date is required</div>
+                        </div>
+                </div>
+                
+              <div class="form-group ">
+                    <label>Enter Mobile</label>
+                    <input type="text" value="+91" readonly size="2"/><input type="number" formControlName="bno" 
+                    class="form-control" [ngClass]="{ 'is-invalid': submitted && f.bno.errors }" />
+                    <div *ngIf="submitted && f.bno.errors" class="invalid-feedback">
+                        <div *ngIf="f.bno.errors.required">Mobile no is required</div>
+                        <div *ngIf="f.bno.errors.pattern">Mobile no Must be Valid</div>
+                    </div>
+                
+             </div>
+                <div class="form-group ">
+                    <label>Enter Email</label>
+                    <input type="text" formControlName="bemail" class="form-control" 
+                    [ngClass]="{ 'is-invalid': submitted && f.bemail.errors }" />
+                    <div *ngIf="submitted && f.bemail.errors" class="invalid-feedback">
+                        <div *ngIf="f.bemail.errors.required">Email is required</div>
+                        <div *ngIf="f.bemail.errors.bemail">Email must be a valid email address</div>
+                    </div>
+                </div>
+                   <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" formControlName="bpwd" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.bpwd.errors }" />
+                        <div *ngIf="submitted && f.bpwd.errors" class="invalid-feedback">
+                            <div *ngIf="f.bpwd.errors.required">Password is required</div>
+                            <div *ngIf="f.bpwd.errors.minlength">Password must be at least 8 characters</div>
+                        </div>
+                    </div>
+                <div class="text-center">
+                    <button class="btn btn-info btn-lg">Edit</button>
+              </div>
+            </form>
+        </div>
+    </div>
+    </form>
+    
+    
+

@@ -1,0 +1,86 @@
+<style>
+    label{
+        color:white
+    }
+    #fa{
+       float:right; 
+    }
+</style>
+&nbsp;
+<div class="container card col-md-4 " id="fa" style="height:150;background-color:lightslategray">
+    &nbsp;
+    <div class="card-body" >
+        <form [formGroup]="additemform" (ngSubmit)="onSubmit()"  >
+            <div class="form-group">
+                    <label>Seller ID</label>
+                    <input type="number" formControlName="sid"  class="form-control" [ngClass]="{ 'is-invalid': submitted && f.sid.errors }" />
+                    <div *ngIf="submitted && f.sid.errors" class="invalid-feedback">
+                        <div *ngIf="f.sid.errors.required">Seller Id is required</div>
+                     
+                    </div>
+             </div>
+           
+            <div class="form-group">
+                <label style="color:white;">Choose Category</label>
+               
+                <select formControlName="cid" class="form-control" (change)="GetSubCategory()">
+                     <option *ngFor="let item of clist" value="{{item.cid}}">{{item.cname}}</option>   
+                </select>
+            </div>
+             
+            <div class="form-group">
+                <label style="color:white;">Choose SubCategory</label>
+               
+                
+                <select formControlName="scid" class="form-control">
+                    <option *ngFor="let item1 of slist" value="{{item1.scid}}">{{item1.sname}}</option>   
+               </select>
+            </div>
+            <div class="form-group">
+                <label>Item Name</label>
+                <input type="text" formControlName="itemName"  class="form-control" [ngClass]="{ 'is-invalid': submitted && f.itemName.errors }" />
+                <div *ngIf="submitted && f.itemName.errors" class="invalid-feedback">
+                    <div *ngIf="f.itemName.errors.required">Item Name is required</div>
+                </div>
+        </div>
+        <div class="form-group">
+            <label>Description</label>
+            <input type="text" formControlName="description"  class="form-control" [ngClass]="{ 'is-invalid': submitted && f.description.errors }" />
+            <div *ngIf="submitted && f.description.errors" class="invalid-feedback">
+                <div *ngIf="f.description.errors.required">Description is required</div>
+            </div>
+    </div>
+    <div class="form-group">
+        <label>Uplaod image</label>
+        <input type="file"(change)="fileEvent($event)" formControlName="imagepath" class="form-control"/>
+    </div>
+    <div class="form-group">
+        <label>Stock Number</label>
+        <input type="number" formControlName="stockNo"  class="form-control" [ngClass]="{ 'is-invalid': submitted && f.stockNo.errors }" />
+        <div *ngIf="submitted && f.stockNo.errors" class="invalid-feedback">
+            <div *ngIf="f.stockNo.errors.required">Stock number is required</div>
+         
+        </div>
+ </div>
+ <div class="form-group">
+    <label>Price</label>
+    <input type="number" formControlName="price"  class="form-control" [ngClass]="{ 'is-invalid': submitted && f.price.errors }" />
+    <div *ngIf="submitted && f.price.errors" class="invalid-feedback">
+        <div *ngIf="f.price.errors.required">price  is required</div>
+    </div>
+</div>
+    <div class="form-group">
+        <label>Remarks</label>
+        <input type="text" formControlName="remarks"    class="form-control" [ngClass]="{ 'is-invalid': submitted && f.remarks.errors }">
+           <div *ngIf="submitted && f.remarks.errors" class="invalid-feedback">
+            <div *ngIf="f.remarks.errors.required">GSTIN is required</div>
+        </div>
+        <div class="text-center">
+            <button class="btn btn-primary mr-1">Add Item</button>
+      </div>
+</div>        
+        </form>
+    </div>
+</div>
+
+

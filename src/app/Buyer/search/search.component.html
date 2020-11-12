@@ -1,0 +1,35 @@
+<style>
+    .box{
+        text-align: center;;
+    }
+</style>
+
+&nbsp;
+&nbsp;
+<form [formGroup]="searchform" >
+<div class="box">
+<input type="text" placeholder="Search.."  formControlName="itemName" >
+&nbsp;
+      <button type="submit" (click)="search()">Search</button>
+      </div>
+    </form>
+    <section>
+        <table class="m" style="background-color: rosybrown;">
+            <!-- <tr *ngFor="let item of list"> 
+                <th>{{item.itemName}}</th>
+            </tr> -->
+            <tr *ngFor="let item of list">
+               <td><img src="assets/images/{{item.imagepath}}" style="width: 200px; height:200px"><br><br>
+              
+               Price:      {{item.price}}<br>
+               Itemname:   {{item.itemName}}<br>
+               Description:{{item.description}}<br>
+               stockNo:    {{item.stockNo}}<br>
+               Remarks:    {{item.remarks}}<br>
+               <button type="submit" (click)="buy(item)">Buy product</button>
+               <button type="button" (click)="Addtocart(item)">Add to cart</button></td>
+            </tr>
+
+           
+        </table>  
+    </section>

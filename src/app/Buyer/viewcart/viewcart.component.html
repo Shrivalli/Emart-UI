@@ -1,0 +1,28 @@
+
+&nbsp;
+&nbsp;
+
+    <section>
+        <table class="table table-bordered" style="background-color: rosybrown;">
+           
+            <tr>
+                <th>Image</th>
+                <th>ItemName</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Item Id</th>
+                <th>StockNo</th>
+                    <th>Remove </th>
+            </tr>
+            <tr *ngFor="let item of clist">
+               <td><img src="assets/images/{{item.imagepath}}" style="width: 200px; height:200px"></td>
+              <td>{{item.itemName}}</td> 
+              <td>{{item.description}}</td> 
+              <td>{{item.price}}</td> 
+              <td>{{item.iid}}</td> 
+              <td>{{item.stockNo}}</td> 
+          
+              <td><button type="button" (click)="Remove(item.cartid)">Remove from cart</button></td>
+                </tr>
+        </table>  
+    </section>

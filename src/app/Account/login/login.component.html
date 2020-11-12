@@ -1,0 +1,48 @@
+
+<div>&nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+</div>
+<div class="container card col-md-4" style="height:300;background-color:transparent; float:left">
+    <form class="card-body"  [formGroup]="loginform" (ngSubmit)="Validate()" >
+
+    <div class="form-group">
+        <label for="username" >UserName</label>
+        <input type="text" formControlName="uname" class="form-control" placeholder="Username" required>
+        
+    </div>
+    <div class="form-group">
+        <label for="password" >Password</label>
+        <input type="password" formControlName="password" class="form-control " placeholder="Password" required>
+    </div>
+<div class="form-group">
+
+<input type="radio" formControlName="role" value="buyer"  >Buyer
+<input type="radio" formControlName="role" value="seller" >Seller 
+</div>
+
+    <div class="form-group">
+    <button class="btn btn-primary">Login</button>&nbsp;&nbsp;<br>
+    
+
+    <a [routerLink]="'/home/buyer-register'" style="color:white;" >Register New Buyer</a>&nbsp;&nbsp;<br>
+    <a [routerLink]="'/home/seller-register'" style="color:white;">Register New Seller</a>          
+    </div>
+   &nbsp;
+    <div class="form-group ">
+        <label class="text-error ">{{errormessage}}</label>
+        </div>
+       
+        
+    </form>
+
+
